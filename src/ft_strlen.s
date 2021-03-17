@@ -1,15 +1,13 @@
-section .text
-	global _ft_strlen
+global	_ft_strlen
 
-_ft_strlen:
+_ft_strlen:	
 	push	rcx
-	xor		rcx, rcx
-nxt:
-	cmp		[rdi], byte 0
+	mov		rcx, 0
+loop:
+	cmp		[rdi + rcx], byte 0
 	jz		end
 	inc		rcx
-	inc		rdi
-	jmp		nxt
+	jmp		loop
 end:
 	mov		rax, rcx
 	pop		rcx
