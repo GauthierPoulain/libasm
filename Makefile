@@ -33,10 +33,9 @@ SRCS = \
 	src/ft_strlen.s \
 	src/ft_strcmp.s \
 	src/ft_strcpy.s \
-
-	# src/ft_strdup.s \
-	# src/ft_read.s \
-	# src/ft_write.s \
+	src/ft_read.s \
+	src/ft_write.s \
+	src/ft_strdup.s \
 
 %.o: %.s
 	@printf "[ ${_PURPLE}${_BOLD}${NAME}${_END} ] > [ $(_GREEN)$(_BOLD)+$(_END) ][ compiling ] $(_BLUE)$(_BOLD)$<$(_END)\n"
@@ -60,8 +59,4 @@ fclean: clean
 re: fclean
 	@$(MAKE) all
 
-test: all
-	@$(CC) $(CFLAGS) -o test -L. -lasm test.c
-	@./test
-
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re
