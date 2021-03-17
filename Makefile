@@ -22,7 +22,7 @@ _IWHITE=\033[47m
 
 NAME = libasm.a
 
-ASM = nasm -fmacho64
+ASM = nasm -fmacho64 -O3
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
 
@@ -62,3 +62,5 @@ re: fclean
 test: all
 	@$(CC) $(CFLAGS) -o test -L. -lasm test.c
 	@./test
+
+.PHONY: all clean fclean re test
