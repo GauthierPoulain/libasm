@@ -16,6 +16,6 @@ _ft_strdup:
 	pop		rsi
 	call	_ft_strcpy
 	ret
-err
+err:
 	mov		rax, 0
 	ret
